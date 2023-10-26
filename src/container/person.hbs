@@ -1,0 +1,130 @@
+{{!--
+Це код container файлу для summary сторінки,
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+--}}
+<div>
+
+    {{>title data="Person" big=true}}
+
+
+    <main>
+        <section>
+            <b>Person</b>
+            <br>
+            <ul>
+                {{#with person}}
+                <li>{{name}}</li>
+                <li>{{age}}</li>
+                <li>{{gender}}</li>
+                <br>
+                <br>
+                <b>address:</b>
+                <br>
+                <br>
+                <address>
+                    {{#with address}}
+                    <li>{{street}}</li>
+                    <li>{{city}}</li>
+                    <li>{{state}}</li>
+                    <li>{{zip}}</li>
+                    <li>{{country}}</li>
+                    {{/with}}
+                </address>
+                <hr>
+                <br>
+                <b>education:</b>
+                <br>
+                <br>
+                {{#each education}}
+                <li>{{degree}}</li>
+                <li>{{major}}</li>
+                <li>{{university}}</li>
+                <li>{{graduationYear}}</li>
+                {{/each}}
+                <hr>
+                <br>
+                <b>workExperience:</b>
+                <br>
+                <br>
+                {{#each workExperience}}
+                <li>{{company}}</li>
+                <li>{{title}}</li>
+                <li>{{startDate}}</li>
+                <li>{{endDate}}</li>
+                <li>{{responsibilities}}</li>
+                <li>{{year_founded}}</li>
+                <li>{{industry}}</li>
+                <hr>
+                <br>
+                <b>employees:</b>
+                <br>
+                <br>
+                {{#each employees}}
+                <li>{{name}}</li>
+                <li>{{position}}</li>
+                <li>{{department}}</li>
+
+                {{#each projects}}
+                <li>{{name}}</li>
+                <li>{{description}}</li>
+                <li>{{status}}</li>
+                <hr>
+                <br>
+                <b>teams:</b>
+                <br>
+                <br>
+                {{#each teams}}
+                <li>{{team_name}}</li>
+
+                {{#with team_leader}}
+                <li>{{name}}</li>
+                <li>{{title}}</li>
+                <li>{{email}}</li>
+                {{/with}}
+                <hr>
+                <br>
+                <i>team_members:</i>
+                <br>
+                <br>
+                {{#each team_members}}
+                <b>{{name}}</b>
+                <br>
+                <li>{{title}}</li>
+                <li>{{email}}</li>
+                <li>{{skills}}</li>
+
+                {{#each projects}}
+                <li>{{name}}</li>
+                <li>{{description}}</li>
+                <li>{{technologies}}</li>
+                <br>
+                {{#each team_members}}
+                <b>{{name}}</b>
+                <li>{{title}}</li>
+                <br>
+                {{/each}}
+
+                {{/each}}
+
+
+
+                {{/each}}
+
+                {{/each}}
+
+                {{/each}}
+
+                {{/each}}
+
+                {{/each}}
+            </ul>
+
+
+
+            {{/with}}
+
+
+
+        </section>
+    </main>
+</div>
