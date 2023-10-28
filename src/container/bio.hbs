@@ -1,0 +1,149 @@
+{{!--
+Це код container файлу для summary сторінки,
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+--}}
+<div>
+
+    {{>title data="Bio" big=true}}
+
+
+    <main>
+        <section>
+            <ul>
+                <strong>
+                    {{name}}
+                </strong>
+                <br>
+                <br>
+                <li>{{birthdate}}
+                <li>{{birthplace}}</li>
+
+                <li>{{deathdate}}</li>
+
+                <address>
+                    <li> {{deathplace}}</li>
+                </address>
+                <li>{{nationality}}</li>
+                <li>{{occupation}}</li>
+                <br>
+                <hr>
+                <br>
+                <em><b>known_for</b></em>
+                <br>
+                <br>
+                {{#each known_for}}
+                <var>
+                    <li>{{this}}</li>
+                </var>
+                {{/each}}
+                <br>
+                <hr>
+                <br>
+                <em><b>education</b></em>
+                <br>
+                <br>
+                {{#each education}}
+                <li>{{degree}}</li>
+                <li>{{field}}</li>
+                <li>{{institution}}</li>
+                <li>{{year}}</li>
+                {{/each}}
+                <br>
+                <hr>
+                <br>
+                <em><b>notable_publications</b></em>
+                <br>
+                <br>
+                {{#each notable_publications}}
+                <p>
+                    <cite>
+                        <li>{{title}}</li>
+                    </cite>
+                </p>
+                <li>{{year}}</li>
+                <li>{{publisher}}</li>
+                {{/each}}
+                <br>
+                <hr>
+                <br>
+                <em><b>partners</b></em>
+                <br>
+                <br>
+                {{#each partners}}
+                <strong>{{name}}</strong>
+                <br>
+                <br>
+                <li>{{relationship}}</li>
+                <li>{{years}}</li>
+                <br>
+                {{/each}}
+                <hr>
+                <br>
+                <em><b>awards</b></em>
+                <br>
+                <br>
+                {{#each awards}}
+                <li>{{title}}</li>
+                <li>{{year}}</li>
+                <p>
+                    <li>{{description}}</li>
+                </p>
+                {{/each}}
+                <br>
+                <hr>
+                <br>
+                <em><b>influences</b></em>
+                <br>
+                <br>
+                {{#each influences}}
+                <li>{{this}}</li>
+                {{/each}}
+                <br>
+                <hr>
+                <br>
+                <em><b>influenced</b></em>
+                <br>
+                <br>
+                {{#each influenced}}
+                <li>{{this}}</li>
+                {{/each}}
+                <br>
+                <hr>
+                <br>
+                <em><b>quotes</b></em>
+                <br>
+                <br>
+                <p><q>{{quotes}}</q></p>
+                <br>
+                <hr>
+                <br>
+                <em><b>major_discoveries</b></em>
+                <br>
+                <br>
+                {{#each major_discoveries}}
+                <li>{{title}}</li>
+                <li>{{year}}</li>
+                <p>
+                    <li>{{description}}</li>
+                </p>
+                {{/each}}
+                <br>
+                <hr>
+                <br>
+                <em><b>contributions</b></em>
+                <br>
+                <br>
+                {{#with contributions}}
+                <li>{{title}}</li>
+                <p>
+                    <li>{{description}}</li>
+                </p>
+                <li>{{year}}</li>
+                <li>{{field}}</li>
+                {{/with}}
+                <br>
+                <hr>
+            </ul>
+        </section>
+    </main>
+</div>
