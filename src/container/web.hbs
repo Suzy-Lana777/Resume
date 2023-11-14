@@ -1,0 +1,116 @@
+{{!--
+Це код container файлу для summary сторінки,
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+--}}
+<div>
+
+    {{>title data="Program" big=true}}
+
+    <main>
+        <section>
+            <div>
+                <ul>
+                    {{#with program}}
+                    {{#with excursion}}
+                    <h3><i>{{name}}</i></h3>
+                    <p>
+                    <p><i><b>Location:</b></i>
+                    </p>
+                    {{#with location}}
+                    <address>
+                        {{city}},
+                        {{country}},
+                    </address>
+                    {{/with}}
+                    {{date}}
+                    <hr>
+                    {{#each program}}
+
+                    <h3><i>{{name}}</i></h3>
+
+                    <i>{{type}},</i>
+                    {{duration}},
+
+                    {{#with details}}
+                    {{#with museum}}
+                    <p>
+                    <h4>museum:</h4>
+                    </p>
+                    <li>
+                        <p>
+                            <b>{{name}}</b>
+                        </p>
+                    </li>
+                    {{#with location}}
+                    <p><i>address:</i></p>
+                    <address>
+                        {{address}},
+                        {{city}},
+                        {{country}}
+                    </address>
+                    {{/with}}
+                    <hr>
+                    <p>
+                    <h4>exhibits:</h4>
+                    </p>
+                    {{#each exhibits}}
+                    <p>
+                        <li>
+                            {{name}},
+                        </li>
+                    </p>
+                    {{#if artist}}
+                    {{artist}}
+                    {{/if}}
+                    <p>{{description}},</p>
+                    {{audio_guide}}
+                    {{/each}}
+                    {{/with}}
+
+                    {{#with guide}}
+                    {{name}},
+                    {{language}},
+                    {{rating}}
+                    {{/with}}
+                    <br>
+                    <br>
+                    <hr>
+
+                    {{#with venue}}
+                    <li>
+                        <h4>{{name}}</h4>
+                    </li>
+                    {{#with location}}
+                    <p><i><b>Location:</b></i>
+                        {{address}},
+                        {{city}},
+                        {{country}}</p>
+                    </address>
+                    {{/with}}
+                    {{/with}}
+                    {{/with}}
+
+                    <i>
+                        <p>Perfomers:</p>
+                    </i>
+                    {{#each details.performers}}
+                    <li>
+                        <h4>{{name}}</h4>
+                        {{type}}
+                    </li>
+                    {{/each}}
+
+
+                    {{/each}}
+
+                    {{/with}}
+
+                    {{/with}}
+
+                    <br>
+                    <hr>
+                </ul>
+            </div>
+        </section>
+    </main>
+</div>
