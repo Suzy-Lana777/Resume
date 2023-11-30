@@ -1,0 +1,109 @@
+<div>
+
+    <title>
+        JS
+    </title>
+
+    {{>title data="JS" big=true}}
+
+    <main>
+        <section>
+            <div>
+                <ul>
+                    <strong>{{name}}</strong>
+                    <p><i><b>description:</b></i>
+                        {{description}}
+                    <p><i><b>history:</b></i>
+                        {{#with history}}
+                        {{year}},
+                        {{founder}}
+                        {{/with}}
+                    <p><i><b>types:</b></i>
+                    <ul>
+                        {{#each types}}
+                        <li>{{this}}</li>
+                        {{/each}}
+                    </ul>
+                    <br>
+                    <hr>
+                    <p><i><b>syntax:</b></i>
+                        {{#with syntax}}
+
+                    <p><button type="button" class="btn btn-primary">variables</button></p>
+                    <ul>
+                        <li><a>{{variables}}</a></li>
+                    </ul>
+                    <br>
+
+                    <p><button type="button" class="btn btn-primary">functions</button></p>
+                    <ul>
+                        <li><a>{{functions}}</a></li>
+                    </ul>
+                    <br>
+
+                    <p><button type="button" class="btn btn-primary">conditionals</button></p>
+                    <ul>
+                        <li><a>{{conditionals}}</a></li>
+                    </ul>
+                    <br>
+
+                    <p><button type="button" class="btn btn-primary">loops</button></p>
+                    <ul>
+                        <li><a>{{loops}}</a></li>
+                    </ul>
+                    <br>
+
+                    <p><button type="button" class="btn btn-primary">classes</button></p>
+                    <ul>
+                        <li><a>{{classes}}</a></li>
+                    </ul>
+                    {{/with}}
+                    <hr>
+
+                    <button type="button" class="btn btn-primary">features</button>
+                    <br>
+                    <ul>
+                        {{#each features}}
+                        <li><a>{{this}}</a></li>
+                        {{/each}}
+                    </ul>
+                    <br>
+                    <hr>
+
+                    <button type="button" class="btn btn-primary">libraries</button>
+                    <br>
+                    <ul>
+                        {{#each libraries}}
+                        <li><a>{{this}}</a></li>
+                        {{/each}}
+                    </ul>
+                    <br>
+                    <hr>
+
+                    <button type="button" class="btn btn-primary">tools</button>
+                    <br>
+                    <ul>
+                        {{#each tools}}
+                        <li><a>{{this}}</a></li>
+                        {{/each}}
+                    </ul>
+                    <br>
+                    <hr>
+
+                    <p><i><b> community:</b></i>
+                        <button type="button" class="btn btn-link">Link</button>
+                    <ul>
+                        {{#each community}}
+
+                        <li><a>{{name}}</a></li>
+                        <li><a>{{type}}</a></li>
+                        <hr>
+                        {{/each}}
+                    </ul>
+                    <br>
+                    <hr>
+                </ul>
+            </div>
+        </section>
+    </main>
+</div>
