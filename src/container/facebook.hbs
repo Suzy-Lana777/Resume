@@ -10,151 +10,83 @@
         <section>
             <div>
                 <ul>
-                    <strong>{{make}}</strong>
-                    {{model}}
-                    <br>
-                    <i>year:</i>
-                    {{year}}
-                    <br>
-                    <i>color:</i>
-                    {{color}}
+                    <strong>{{name}}</strong>
                     <br>
                     <br>
-                    <button type="button" class="btn btn-danger">features</button>
-                    <br>
-                    {{#with features}}
-                    {{#with interior}}
-                    <b><i>interior:</i></b>
-                    <br>
-                    {{#with seats}}
-                    <i>material:</i>
-                    {{material}}
-                    <br>
-                    <i>color:</i>
-                    {{color}}<br>
-                    {{heated}}<br>
-                    {{ventilated}}<br>
-                    {{/with}}
-                    <hr>
-                    <i>material:</i>
-                    {{#with dashboard}}
-                    {{material}}<br>
-                    <i>color:</i>
-                    {{color}}<br>
-                    <button type="button" class="btn btn-primary">display</button>
-                    {{#with display}}
+                    {{#each users}}
+                    <button type="button" class="btn btn-primary">users</button><br>
                     <ul>
-                        <li>{{type}}</li>
-                        <li>{{size}}</li>
-                        <li>{{resolution}}</li>
-                        <li>{{touchscreen}}</li>
-                    </ul>
-                    {{/with}}
-                    {{/with}}
-                    <hr>
-                    <button type="button" class="btn btn-success">audio</button>
-                    {{#with audio}}
-                    <ul>
-                        <li>{{system}}</li>
-                        <li>{{speakers}}</li>
-                        <li>{{subwoofer}}</li>
-                        <li>{{bluetooth}}</li>
-                        <li>{{USB}}</li>
-                    </ul>
-                    {{/with}}
-                    {{/with}}
-                    <hr>
-                    <button type="button" class="btn btn-warning">exterior</button><br>
-                    {{#with exterior}}
-                    {{#with wheels}}
-                    <i>wheels:</i>
-                    <ul>
-                        <li>{{size}}</li>
-                        <li>{{type}}</li>
-                        <li>{{color}}</li>
-                    </ul>
-                    {{/with}}
-                    <hr>
-                    <button type="button" class="btn btn-info">headlights</button><br>
-                    {{#with headlights}}
-                    <ul>
-                        <li>{{type}}</li>
-                        <li>{{brightness}}</li>
-                        <li>{{automatic}}</li>
-                    </ul>
-                    {{/with}}
-                    <hr>
-                    {{#with sunroof}}
-                    <button type="button" class="btn btn-secondary">sunroof</button><br>
-                    <ul>
-                        <li>{{type}}</li>
-                        <li>{{size}}</li>
-                        <li>{{automatic}}</li>
-                    </ul>
-                    {{/with}}
-                    {{/with}}
-                    <hr>
-                    <button type="button" class="btn btn-primary">safety</button><br>
-                    {{#with safety}}
-                    {{#with airbags}}
-                    <b><i>airbags:</i></b>
-                    <i>front, side, knee, rear of {{rear}} pieces each</i>
-                    {{/with}}
-                    <hr>
-                    <button type="button" class="btn btn-danger">assistance</button><br>
-                    {{#with assistance}}
-                    <i>blind_spot_monitoring: </i>{{blind_spot_monitoring}}<br>
-                    <i>rear_cross_traffic_alert: </i>{{rear_cross_traffic_alert}}<br>
-                    <i>lane_departure_warning: </i>{{lane_departure_warning}}<br>
-                    <i>adaptive_cruise_control: </i>{{adaptive_cruise_control}}<br>
-                    <i> collision_warning: </i>{{collision_warning}}<br>
-                    {{/with}}
-                    {{/with}}
-                    {{/with}}
-                    <hr>
-                    <button type="button" class="btn btn-success">engine</button><br>
-                    {{#with engine}}
-                    <ul>
-                        <li>{{type}}</li>
-                        <li>{{displacement}}</li>
-                        <li>{{horsepower}}</li>
-                        <li>{{torque}}</li>
+                        <li>{{id}}</li>
+                        <li><b>{{name}}</b></li>
+                        <li>{{gender}}</li>
+                        <li>{{age}}</li>
                     </ul>
                     <hr>
-                    <button type="button" class="btn btn-warning">transmission</button><br>
-                    {{#with transmission}}
+                    {{#each friends}}
+                    <button type="button" class="btn btn-success">friends</button><br>
                     <ul>
-                        <li>{{type}}</li>
-                        <li>{{gears}}</li>
-                    </ul>
-                    {{/with}}
-                    {{/with}}
-                    <hr>
-                    <button type="button" class="btn btn-info">fuel_economy</button><br>
-                    {{#with fuel_economy}}
-                    <i>city: </i>{{ city}}<br>
-                    <i>highway: </i>{{highway}}<br>
-                    <i>combined: </i>{{combined}}<br>
-                    {{/with}}
-                    <hr>
-                    <button type="button" class="btn btn-light">price</button>
-                    {{#with price}}
-                    <ul>
-                        <li>{{base}}</li>
-                        <li>{{destination}}</li>
-                        <li>{{total}}</li>
+                        <li>{{id}}</li>
+                        <li>{{name}}</li>
+                        <li>{{gender}}</li>
+                        <li>{{age}}</li>
                     </ul>
                     <hr>
-                    <b><i>options:</i></b>
-                    {{#with options}}
+                    {{#each mutual_friends}}
+                    <button type="button" class="btn btn-warning">mutual_friends</button><br>
                     <ul>
-                        <i>navigation: </i>{{navigation}}<br>
-                        <i>moonroof: </i>{{moonroof}}<br>
-                        <i>premium_paint: </i>{{premium_paint}}<br>
+                        <li>{{id}}</li>
+                        <li>{{name}}</li>
+                        <li>{{gender}}</li>
+                        <li>{{age}}</li>
                     </ul>
-                    {{/with}}
-                    {{/with}}
                     <hr>
+                    {{/each}}
+                    {{/each}}
+                    <hr>
+                    {{#each groups}}
+                    <button type="button" class="btn btn-info">groups</button><br>
+                    <ul>
+                        <li>{{id}}</li>
+                        <li>{{name}}</li>
+                        <li>{{description}}</li>
+                    </ul>
+                    <hr>
+
+                    {{#each members}}
+                    <button type="button" class="btn btn-secondary">members</button>
+                    <ul>
+                        <li>{{id}}</li>
+                        <li>{{name}}</li>
+                        <li>{{gender}}</li>
+                        <li>{{age}}</li>
+                    </ul>
+                    <hr>
+                    {{/each}}
+                    {{/each}}
+                    <hr>
+                    {{#each groups}}
+                    <button type="button" class="btn btn-info">groups</button><br>
+                    <ul>
+                        <li>{{id}}</li>
+                        <li>{{name}}</li>
+                        <li>{{description}}</li>
+                    </ul>
+                    <hr>
+                    {{/each}}
+                    {{#each members}}
+                    <button type="button" class="btn btn-secondary">members</button>
+                    <ul>
+                        <li>{{id}}</li>
+                        <li>{{name}}</li>
+                        <li>{{gender}}</li>
+                        <li>{{age}}</li>
+                    </ul>
+                    <hr>
+
+                    {{/each}}
+
+                    {{/each}}
+
                 </ul>
 
 
