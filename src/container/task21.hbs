@@ -1,0 +1,97 @@
+<div>
+
+    <div class="display-5">task21</div>
+
+    {{>title data="task21" big=true}}
+
+    <main>
+        <section>
+            <h3>{{name}} users</h3>
+            <hr>
+            <ol>
+                {{#each users}}
+                <p>User ID:{{id}}</p>
+                <p>
+                <h3>Name: {{name}}</h3>
+                </p>
+                <p>Gender: {{gender}}</p>
+                <p>Age: {{age}}</p>
+                <hr>
+
+                <h4>{{#each friends}}</h4>
+                <h4>friends:</h4>
+                <p>ID: {{id}} </p>
+                <p><b>Name: {{name}}</b></p>
+                <p>Gender: {{gender}}</p>
+                <p>Age: {{age}}</p>
+                <hr>
+                <h4>Mutual friends:</h4>
+                {{#each mutual_friends}}
+
+                <p>ID: {{id}} </p>
+                <p><b>Name: {{name}}</b></p>
+                <p>Gender: {{gender}}</p>
+                <p>Age: {{age}}</p>
+                <hr>
+                {{#if mutual_friends}}
+
+                {{#each mutual_friends}}
+
+                <p>ID: {{id}} </p>
+                <p><b>Name: {{name}}</b></p>
+                <p>Gender: {{gender}}</p>
+                <p>Age: {{age}}</p>
+                <hr>
+
+                {{/each}}
+                {{/if}}
+                {{/each}}
+
+                {{#if groups}}
+                <p>Groups:</p>
+                {{#each groups}}
+                <p>ID:{{id}}</p>
+                <p>Name: <dt><i>{{name}}</i> </dt>
+                <p>Description: <i>{{description}}
+                        <hr>
+                        <p>Members:</p>
+                        {{#each members}}
+                        <p>ID: {{id}} </p>
+                        <p>Name: {{name}} </p>
+                        <p>Gender: {{gender}}</p>
+                        <p>Age: {{age}}</p>
+                        <hr>
+                        {{/each}}
+                        {{/each}}
+                        {{/if}}
+
+                        {{/each}}
+
+                        {{#if groups}}
+                        <p><b>Groups:</b></p>
+                        {{#each groups}}
+
+                        <p>ID: {{id}} </p>
+                        <p>Name: <dt><i>{{name}} </dt>
+                        <p>Description: <i>{{description}}</p>
+                        <hr>
+
+                        <p>Members:</p>
+
+                        {{#each members}}
+
+                        <p>ID: {{id}} </p>
+                        <p>Name: {{name}} </p>
+                        <p>Gender: {{gender}}</p>
+                        <p>Age: {{age}}</p>
+                        <hr>
+                        {{/each}}
+
+                        {{/each}}
+                        {{/if}}
+
+                        {{/each}}
+
+        </section>
+    </main>
+</div>
