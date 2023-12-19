@@ -1,97 +1,120 @@
 <div>
-
-    <div class="display-5">task21</div>
-
-    {{>title data="task21" big=true}}
-
+    <div class="text-muted">task21</div>
     <main>
-        <section>
-            <h3>{{name}} users</h3>
-            <hr>
-            <ol>
-                {{#each users}}
-                <p>User ID:{{id}}</p>
-                <p>
-                <h3>Name: {{name}}</h3>
-                </p>
-                <p>Gender: {{gender}}</p>
-                <p>Age: {{age}}</p>
-                <hr>
+        <div class="card">
+            <div class="card-body">
+                <div class="card">
+                    <div class="card-body">
+                        {{#with heading}}
+                        {{#with main}}
+                        <h1>{{title}}</h1>
+                        <br>
+                        <p>{{text}}</p>
+                        {{#with button_text}}
+                        <button class="btn btn-primary">{{solid}}</button>
+                        <br>
+                        <br>
+                        <button class="btn btn-outline-primary">{{outline}}</button>
 
-                <h4>{{#each friends}}</h4>
-                <h4>friends:</h4>
-                <p>ID: {{id}} </p>
-                <p><b>Name: {{name}}</b></p>
-                <p>Gender: {{gender}}</p>
-                <p>Age: {{age}}</p>
-                <hr>
-                <h4>Mutual friends:</h4>
-                {{#each mutual_friends}}
+                        {{/with}}
+                        {{/with}}
+                    </div>
+                </div>
+                <br>
+                <div class="card">
+                    <div class="card-body">
+                        {{#with second}}
+                        <h2>{{title}}</h2>
+                        <br>
+                        {{text}}
+                        <br>
+                        <br>
+                        {{#with button_text}}
+                        <button class="btn btn-secondary">{{solid}}</button>
+                        <br>
+                        <br>
+                        <button class="btn btn-outline-secondary">{{outline}}</button>
+                        {{/with}}
+                        {{/with}}
+                    </div>
+                </div>
+                <br>
+                <div class="card">
+                    <div class="card-body">
+                        {{#with subblock}}
+                        <h3>{{title}}</h3>
+                        <br>
+                        {{text}}
+                        <br>
+                        <br>
+                        {{#with button_text}}
+                        <button class="btn btn-dark">{{solid}}</button>
+                        <br>
+                        <br>
+                        <button class="btn btn-outline-dark">{{outline}}</button>
+                        {{/with}}
+                        {{/with}}
+                        {{/with}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="card">
+            <div class="card-body">
 
-                <p>ID: {{id}} </p>
-                <p><b>Name: {{name}}</b></p>
-                <p>Gender: {{gender}}</p>
-                <p>Age: {{age}}</p>
-                <hr>
-                {{#if mutual_friends}}
 
-                {{#each mutual_friends}}
-
-                <p>ID: {{id}} </p>
-                <p><b>Name: {{name}}</b></p>
-                <p>Gender: {{gender}}</p>
-                <p>Age: {{age}}</p>
-                <hr>
-
-                {{/each}}
-                {{/if}}
-                {{/each}}
-
-                {{#if groups}}
-                <p>Groups:</p>
-                {{#each groups}}
-                <p>ID:{{id}}</p>
-                <p>Name: <dt><i>{{name}}</i> </dt>
-                <p>Description: <i>{{description}}
-                        <hr>
-                        <p>Members:</p>
-                        {{#each members}}
-                        <p>ID: {{id}} </p>
-                        <p>Name: {{name}} </p>
-                        <p>Gender: {{gender}}</p>
-                        <p>Age: {{age}}</p>
-                        <hr>
-                        {{/each}}
-                        {{/each}}
-                        {{/if}}
-
-                        {{/each}}
-
-                        {{#if groups}}
-                        <p><b>Groups:</b></p>
-                        {{#each groups}}
-
-                        <p>ID: {{id}} </p>
-                        <p>Name: <dt><i>{{name}} </dt>
-                        <p>Description: <i>{{description}}</p>
-                        <hr>
-
-                        <p>Members:</p>
-
-                        {{#each members}}
-
-                        <p>ID: {{id}} </p>
-                        <p>Name: {{name}} </p>
-                        <p>Gender: {{gender}}</p>
-                        <p>Age: {{age}}</p>
-                        <hr>
-                        {{/each}}
-
-                        {{/each}}
-                        {{/if}}
-
-                        {{/each}}
-
-        </section>
+                {{#with nested_display}}
+                <div class="display-1">{{title}}</div>
+                <div class="card">
+                    <div class="card-body">
+                        {{#with children_display}}
+                        <div class="display-4">{{title}}</div>
+                        <br>
+                        <p>{{text}}</p>
+                        {{#with button}}
+                        <button class="btn btn-outline-warning">{{text}}</button>
+                        <br>
+                        {{/with}}
+                        {{/with}}
+                    </div>
+                </div>
+                <br>
+                <h6>{{header_text}}</h6>
+                {{#with button}}
+                <button class="btn btn-info btn-sm">{{text}}</button>
+            </div>
+        </div>
+        {{/with}}
+        {{/with}}
+        <br>
+        <div class="card">
+            <div class="card-body">
+                {{#with paragraph}}
+                <h5 class="text-uppercase">{{title}}</h5>
+                <h6 class="text-lowercase">{{text}}</h5>
+                    {{#with button}}
+                    <div class="text-primary">{{text}}</div>
+                    {{url}}
+                    {{/with}}
+                    <br>
+                    <br>
+                    <div class="card">
+                        <div class="card-body">
+                            {{#each list_name}}
+                            <ul>
+                                <li>
+                                    {{text}}
+                                    <br>
+                                    <div class="text-primary">{{url}}</div>
+                                </li>
+                            </ul>
+                            {{/each}}
+                            <br>
+                            {{/with}}
+                        </div>
+                    </div>
+            </div>
+        </div>
     </main>
 </div>
