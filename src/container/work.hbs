@@ -3,89 +3,71 @@
 в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
 --}}
 
-<div>
+<div class="m-3">
     {{#with main}}
     <main>
-        <section>
-            {{>title data="Work history" big=true}}
+        <section class="m-4">
+            <div class="ms-4">
+                {{>title data="Work history" big=true }}</div>
             <div>
-                <p>
-                <ul>
+                <p class="mb-2">
+
+                <ul class="pb-3">
                     {{#each works}}
                     <li>
-                        <div>{{position}}</div>
+                        <div class="pb-5">{{position}}</div>
 
-                        <br>
-
-                        <div>{{duration.from}} -
+                        <div class="py-5">
+                            {{duration.from}} -
                             {{#if duration.to}}
                             {{duration.to}}
                             {{else}}
                             (досі працюємо)
                             {{/if}}
+
                         </div>
-
-                        <br>
-
-                        <div>{{>link text=company.name href=company.url blank=true noLine=true}}</div>
-
-                        <br>
-                        <br>
+                        <div class="my-5">{{>link text=company.name href=company.url blank=true noLine=true}}</div>
 
                         <div>
-                            <strong>Projects ({{projectAmount}})</strong>
+                            <strong class="mb-5">Projects ({{projectAmount}})</strong>
 
                         </div>
-
-                        <br>
 
                         <ul>
                             {{#each projects}}
 
-                            <li>
+                            <li class="pb-3">
                                 {{#unless company.url}}
                                 <div>{{>link text=name href=url blank=true noLine=true}}</div>
                                 {{else}}
                                 <b>{{company.name}}</b>
                                 {{/unless}}
 
-                                <br>
-
                                 <div>
-                                    <p>{{about}}</p>
+                                    <p class="pb-3">{{about}}</p>
                                 </div>
                             </li>
-                            <br>
-
                             <div>
                                 <em>"Project stacks"</em>
                             </div>
-
-                            <br>
-
                             <div>
                                 <ul>
                                     {{#each stacks}}
-                                    <li>{{name}}</li>
+                                    <li class="pb-3">{{name}}</li>
                                     {{/each}}
                                 </ul>
                             </div>
                             <br>
-                            <strong>Project stacks ({{stackAmount}})</strong>
+                            <strong class="p-3">Project stacks ({{stackAmount}})</strong>
 
-                            <br>
-                            <br>
                             <div>
                                 <em>"Project awards"</em>
                             </div>
 
-
-                            <br>
-
                             <div>
                                 <ul>
                                     {{#each awards}}
-                                    <li>{{name}}</li>
+                                    <li class="pb-3">{{name}}</li>
                                     {{/each}}
                                 </ul>
                             </div>
@@ -93,7 +75,7 @@
                     {{/each}}
                 </ul>
                 </li>
-                <br>
+
                 {{/each}}
                 </ul>
                 </p>

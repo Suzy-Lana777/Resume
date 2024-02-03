@@ -6,27 +6,25 @@
 <html>
 
 <head>
-	<title>
+	<title class="ms-3 my-3">
 		{{page.title}}
 	</title>
 	<meta charset='utf-8' />
 	<link href='css/index.css' rel='stylesheet' />
 </head>
 
-<body>
-	{{>nav}}
+<body class="p-5">
+	<div class="mb-5">
+		{{>nav}}
+	</div>
 
-	<br>
-	<hr>
+	<hr class="m-5">
 
 	{{! ↓ ця кострукція показує куди шаблонізатору треба вставляти код з container файлу --}}
 	{{{body}}}
-
-	<br>
-	<hr>
-
-	{{>footer}}
-
+	<div class="mb-5">
+		{{>footer}}
+	</div>
 </body>
 
 

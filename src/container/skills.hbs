@@ -7,11 +7,11 @@
 
     {{#with main}}
     <main>
-        <section>
+        <section class="mb-2">
             {{>title data="All skills" big=true}}
             <ul>
                 {{#each skills}}
-                <li>
+                <li class="pb-3">
                     {{name}}
                     {{#if point includeZero=true}} ({{point}}) {{/if}}
 
@@ -31,7 +31,7 @@
             {{>title data="My hobbies"}}
             <ul>
                 {{#each hobbies}}
-                <li>
+                <li class="pb-3">
                     {{name}}
                     {{#if isMain}} (favourite)
                     {{/if}}

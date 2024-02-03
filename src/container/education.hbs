@@ -6,11 +6,11 @@
 <div>
     {{#with main}}
     <main>
-        <section>
+        <section class="mb-2">
             {{>title data="My educationss" big=true}}
             <ul>
                 {{#each education}}
-                <li>{{name}} {{#if isEnd includeZero=false}} (ще в процесі) {{/if}}</li>
+                <li class="pb-3">{{name}} {{#if isEnd includeZero=false}} (ще в процесі) {{/if}}</li>
                 {{/each}}
             </ul>
         </section>
@@ -18,7 +18,7 @@
             {{>title data="My certificates" big=false}}
             <ul>
                 {{#each certificates}}
-                <li>{{name}} ({{id}})</li>
+                <li class="pb-3">{{name}} ({{id}})</li>
                 {{/each}}
             </ul>
         </section>
