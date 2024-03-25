@@ -1,0 +1,40 @@
+<main>
+    <div class="col-12 pt-2">
+        <hr>
+    </div>
+    <div class="col-12">
+        {{#each itemList}}
+        <ul class="list-group">
+
+            <li class="list-group-item">
+
+                <div class="col-5 pt-3">
+                    {{number}}
+                </div>
+                <div class="row g-2">
+                    <div class="col-3 pt-2">
+                        <h6>{{status}}</h6>
+                    </div>
+                    {{#with amount}}
+                    <div class="col-3 ps-3">
+                        {{title}}:
+                        <h6>{{value}}</h6>
+                    </div>
+                    {{/with}}
+                    {{#each images}}
+                    <div class="col-1 pb-4">
+                        <img src={{this}} class="card-img-top" alt="Product photo">
+                    </div>
+                    {{/each}}
+                    {{#with button}}
+                    <div class="col-2 gap-2 mx-auto">
+                        <button class="btn btn-primary ms-5 mt-2">
+                            <a href="{{link}}" class="nav-link text-center column">{{text}}</a>
+                        </button>
+                    </div>
+                </div>
+                {{/with}}
+            </li>
+        </ul>
+        {{/each}}
+</main>
