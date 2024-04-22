@@ -1,0 +1,54 @@
+<div class="col-8">
+    <div class="row g-2">
+        {{#each goodsList}}
+        <div class="col-6">
+            <div class="card pb-3 mb-5">
+                <img src={{img}} class="card-img-top" alt="Product photo">
+                <div class="row ms-2 mt-2">
+                    <div class="col-3">
+                        {{#if isHot}}
+                        <span class="badge text-bg-warning rounded-pill">{{isHot}}</span>
+                        {{/if}}
+                    </div>
+                    <div class="col-3">
+                        {{#if isNew}}
+                        <span class="badge text-bg-primary rounded-pill">{{isNew}}</span>
+                        {{/if}}
+                    </div>
+                    <div class="col-3">
+                        {{#if isFree}}
+                        <span class="badge text-bg-success rounded-pill">{{isFree}}</span>
+                        {{/if}}
+                    </div>
+                    <div class="col-3">
+                        {{#if isFast}}
+                        <span class="badge text-bg-secondary rounded-pill">{{isFast}}</span>
+                        {{/if}}
+                    </div>
+                </div>
+                <h5 class="text mt-3 ms-3"> {{name}}</h5>
+
+                {{#with review}}
+                <div class="ms-3">
+                    {{amount}} {{text}}
+                </div>
+                {{/with}}
+                <h4 class="text mt-3 ms-3">{{price}}</h4>
+                <div class="ms-3">{{delivery}}</div>
+                {{#each buttons}}
+                <div class="col-7 ms-3 mt-3 mb-1">
+                    <button class="btn {{#if isPrimary}}btn-primary{{/if}}{{#if isSecondary}}btn-secondary{{/if}}">
+                        <a href="{{link}}" class="nav-link text-center">{{text}}</a>
+                    </button>
+                </div>
+                {{/each}}
+                {{#each characteristics}}
+                <ul>
+                    <li class="ps-2">{{title}}: {{value}}</li>
+                </ul>
+                {{/each}}
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div>
